@@ -1,5 +1,6 @@
 import { Cart } from "./cart"
 import { Product } from "./product"
+import { Bundle } from "./bundle"
 
 describe("cart", () => {
   it("returns the same product if its alone", () => {
@@ -7,7 +8,7 @@ describe("cart", () => {
     const p1 = new Product("p1")
     cart.add(p1)
 
-    const bundles = cart.computeBundles();
+    const bundles = cart.computeBundles()
 
     expect(bundles).toEqual([p1])
   })
@@ -19,10 +20,21 @@ describe("cart", () => {
     cart.add(p1)
     cart.add(p3)
 
-    const bundles = cart.computeBundles();
+    const bundles = cart.computeBundles()
 
     expect(bundles).toEqual([p1, p3])
   })
 
-  it.todo("creates a bundle if is possible")
+  it("creates a bundle if is possible", () => {
+    const cart = new Cart()
+    const p1 = new Product("p1")
+    const p2 = new Product("p2")
+    cart.add(p1)
+    cart.add(p2)
+
+    const bundles = cart.computeBundles()
+
+    const b1 = new Bundle([p1, p2])
+    expect(bundles).toEqual([b1])
+  })
 })
