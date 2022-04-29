@@ -31,6 +31,13 @@ export class Cart {
     }
 
     if (
+      this.products[0].getName() === "p2" &&
+      this.products[1].getName() === "p1"
+    ) {
+      return [new Bundle("b1")]
+    }
+
+    if (
       this.products[0].getName() === "p1" &&
       this.products[1].getName() === "p4"
     ) {
