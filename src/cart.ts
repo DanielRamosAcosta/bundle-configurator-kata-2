@@ -12,7 +12,7 @@ export class Cart {
     if (this.products.length <= 1) {
       return this.products;
     }
-    if (this.products[1].getName() === "p2" || this.products[1].getName() === "p4") {
+    if (this.products[1].getName() === "p2" || this.products[1].getName() === "p4"|| this.products[1].getName() === "p5") {
       return [new Bundle(this.products)];
     }
 

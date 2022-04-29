@@ -28,8 +28,11 @@ describe("cart", () => {
   it.each([
     ["p1", "p2"],
     ["p1", "p4"],
+    ["p3", "p4"],
+    ["p1", "p2", "p3", "p4"],
+    ["p1", "p5"],
   ])(
-    "creates only one bundle when all the products belong to it",
+    "creates only one bundle when all the products belong to it %s %s %s %s",
     (...productNames) => {
       const cart = new Cart()
       const products = productNames.map((p) => new Product(p))
