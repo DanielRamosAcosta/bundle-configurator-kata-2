@@ -20,35 +20,35 @@ export class Cart {
       this.products[2].getName() === "p3" &&
       this.products[3].getName() === "p4"
     ) {
-      return [new Bundle(this.products, "b4")]
+      return [new Bundle("b4")]
     }
 
     if (
       this.products[0].getName() === "p1" &&
       this.products[1].getName() === "p2"
     ) {
-      return [new Bundle(this.products, "b1")]
+      return [new Bundle("b1")]
     }
 
     if (
       this.products[0].getName() === "p1" &&
       this.products[1].getName() === "p4"
     ) {
-      return [new Bundle(this.products, "b2")]
+      return [new Bundle("b2")]
     }
 
     if (
       this.products[0].getName() === "p3" &&
       this.products[1].getName() === "p4"
     ) {
-      return [new Bundle(this.products, "b3")]
+      return [new Bundle("b3")]
     }
 
     if (
       this.products[0].getName() === "p1" &&
       this.products[1].getName() === "p5"
     ) {
-      return [new Bundle(this.products, "b5")]
+      return [new Bundle("b5")]
     }
 
     return this.products

@@ -40,7 +40,7 @@ describe("cart", () => {
 
       const bundles = cart.computeBundles()
 
-      const expectedBundle = new Bundle(products, bundleName)
+      const expectedBundle = new Bundle(bundleName)
       expect(bundles).toEqual([expectedBundle])
     },
   )
