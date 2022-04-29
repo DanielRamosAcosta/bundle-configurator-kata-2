@@ -13,13 +13,9 @@ export class Cart {
       return this.products
     }
 
-    if (
-      this.products.length >= 4 &&
-      this.products[0].getName() === "p1" &&
-      this.products[1].getName() === "p2" &&
-      this.products[2].getName() === "p3" &&
-      this.products[3].getName() === "p4"
-    ) {
+    const productNames = this.products.map((product) => product.getName());
+
+    if (["p1", "p2", "p3", "p4"].every((productName) => productNames.includes(productName))) {
       return [new Bundle("b4")]
     }
 
