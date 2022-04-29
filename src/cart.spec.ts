@@ -50,4 +50,20 @@ describe("cart", () => {
     const b2 = new Bundle([p1, p4])
     expect(bundles).toEqual([b2])
   })
+
+  it.each([
+    ["p1", "p2"],
+    ["p1", "p4"],
+  ])("works", (aa, bb) => {
+    const cart = new Cart()
+    const a = new Product(aa)
+    const b = new Product(bb)
+    cart.add(a)
+    cart.add(b)
+
+    const bundles = cart.computeBundles()
+
+    const b2 = new Bundle([a, b])
+    expect(bundles).toEqual([b2])
+  })
 })
