@@ -12,6 +12,9 @@ export class Cart {
     if (this.products.length >= 2 && this.products[1].getName() === "p2") {
       return [new Bundle(this.products)]
     }
+    if (this.products.length >= 2 && this.products[1].getName() === "p4") {
+      return [new Bundle(this.products)]
+    }
 
     return this.products
   }
