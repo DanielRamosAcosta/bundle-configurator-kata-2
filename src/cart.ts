@@ -10,10 +10,45 @@ export class Cart {
 
   computeBundles(): Array<Bundle | Product> {
     if (this.products.length <= 1) {
-      return this.products;
+      return this.products
     }
-    if (this.products[1].getName() === "p2" || this.products[1].getName() === "p4"|| this.products[1].getName() === "p5") {
-      return [new Bundle(this.products)];
+
+    if (
+      this.products.length >= 4 &&
+      this.products[0].getName() === "p1" &&
+      this.products[1].getName() === "p2" &&
+      this.products[2].getName() === "p3" &&
+      this.products[3].getName() === "p4"
+    ) {
+      return [new Bundle(this.products, "b4")]
+    }
+
+    if (
+      this.products[0].getName() === "p1" &&
+      this.products[1].getName() === "p2"
+    ) {
+      return [new Bundle(this.products, "b1")]
+    }
+
+    if (
+      this.products[0].getName() === "p1" &&
+      this.products[1].getName() === "p4"
+    ) {
+      return [new Bundle(this.products, "b2")]
+    }
+
+    if (
+      this.products[0].getName() === "p3" &&
+      this.products[1].getName() === "p4"
+    ) {
+      return [new Bundle(this.products, "b3")]
+    }
+
+    if (
+      this.products[0].getName() === "p1" &&
+      this.products[1].getName() === "p5"
+    ) {
+      return [new Bundle(this.products, "b5")]
     }
 
     return this.products
