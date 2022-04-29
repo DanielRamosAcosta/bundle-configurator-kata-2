@@ -25,32 +25,6 @@ describe("cart", () => {
     expect(bundles).toEqual([p1, p3])
   })
 
-  it("creates a bundle if is possible p1 and p2", () => {
-    const cart = new Cart()
-    const p1 = new Product("p1")
-    const p2 = new Product("p2")
-    cart.add(p1)
-    cart.add(p2)
-
-    const bundles = cart.computeBundles()
-
-    const b1 = new Bundle([p1, p2])
-    expect(bundles).toEqual([b1])
-  })
-
-  it("creates a bundle if is possible p1 and p4", () => {
-    const cart = new Cart()
-    const p1 = new Product("p1")
-    const p4 = new Product("p4")
-    cart.add(p1)
-    cart.add(p4)
-
-    const bundles = cart.computeBundles()
-
-    const b2 = new Bundle([p1, p4])
-    expect(bundles).toEqual([b2])
-  })
-
   it.each([
     ["p1", "p2"],
     ["p1", "p4"],
