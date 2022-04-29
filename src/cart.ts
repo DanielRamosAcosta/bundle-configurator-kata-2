@@ -12,11 +12,8 @@ export class Cart {
     if (this.products.length <= 1) {
       return this.products;
     }
-    if (this.products[1].getName() === "p2") {
+    if (this.products[1].getName() === "p2" || this.products[1].getName() === "p4") {
       return [new Bundle(this.products)];
-    }
-    if (this.products[1].getName() === "p4") {
-      return [new Bundle(this.products)]
     }
 
     return this.products
