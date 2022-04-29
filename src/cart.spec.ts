@@ -28,16 +28,17 @@ describe("cart", () => {
   it.each([
     ["p1", "p2"],
     ["p1", "p4"],
-  ])("works", (aa, bb) => {
-    const cart = new Cart()
-    const a = new Product(aa)
-    const b = new Product(bb)
-    cart.add(a)
-    cart.add(b)
+  ])(
+    "creates only one bundle when all the products belong to it",
+    (...productNames) => {
+      const cart = new Cart()
+      const products = productNames.map((p) => new Product(p))
+      products.forEach((p) => cart.add(p))
 
-    const bundles = cart.computeBundles()
+      const bundles = cart.computeBundles()
 
-    const b2 = new Bundle([a, b])
-    expect(bundles).toEqual([b2])
-  })
+      const expectedBundle = new Bundle(products)
+      expect(bundles).toEqual([expectedBundle])
+    },
+  )
 })
